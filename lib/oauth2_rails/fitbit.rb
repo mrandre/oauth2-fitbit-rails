@@ -61,5 +61,17 @@ module Oauth2Rails
     def recent_activites
       api_call("/1/user/-/activities/recent.json")
     end
+
+    def recent_activities_by_date(date)
+      api_call("/1/user/-/activities/date/#{date}.json")
+    end
+
+    def steps_intraday(start_date) #this works
+      api_call("/1/user/-/activities/steps/date/#{start_date}/1d/15min/time/0:00/23:59.json") #this works
+    end
+
+
+
+
   end
 end
